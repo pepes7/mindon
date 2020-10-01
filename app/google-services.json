@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "523249504868",
+    "firebase_url": "https://mindon-cb4fc.firebaseio.com",
+    "project_id": "mindon-cb4fc",
+    "storage_bucket": "mindon-cb4fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523249504868:android:805f083b972186938bc571",
+        "android_client_info": {
+          "package_name": "com.example.mindon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523249504868-376gclphmvd6j2hihtedf9rb9g952g0h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mindon",
+            "certificate_hash": "7d121e6e62e8e424378820a93348d8d228e89b55"
+          }
+        },
+        {
+          "client_id": "523249504868-tnf40i940beaugoefg6bjojgirg5t6tg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3cqNhvWvKyPhyC5yqMdsi_0I384PRMc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523249504868-tnf40i940beaugoefg6bjojgirg5t6tg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
