@@ -67,7 +67,7 @@ class EscolhaNivelActivity : AppCompatActivity() {
                     val ref = usuarios.child(auth!!.currentUser!!.uid)
                     ref.setValue(u)
 
-                    Toast.makeText(this,"Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Usuário cadastrado com sucesso!", Toast.LENGTH_LONG).show()
                     startActivity(Intent(this,HomeActivity::class.java))
                 }else{
                     try {
@@ -76,27 +76,28 @@ class EscolhaNivelActivity : AppCompatActivity() {
                         Toast.makeText(
                             this,
                             "Senha fraca!",
-                            Toast.LENGTH_SHORT
+                            Toast.LENGTH_LONG
                         ).show()
                     } catch (e: FirebaseAuthInvalidCredentialsException) {
                         Toast.makeText(
                             this,
                             "Email inválido!",
-                            Toast.LENGTH_SHORT
+                            Toast.LENGTH_LONG
                         ).show()
                     } catch (e: FirebaseAuthUserCollisionException) {
                         Toast.makeText(
                             this,
                             "Usuário já cadastrado!",
-                            Toast.LENGTH_SHORT
+                            Toast.LENGTH_LONG
                         ).show()
                     } catch (e: Exception) {
                         Toast.makeText(
                             this,
                             "" + e.message,
-                            Toast.LENGTH_SHORT
+                            Toast.LENGTH_LONG
                         ).show()
                     }
+                    startActivity(Intent(this,CadastroActivity::class.java))
                 }
             }
 
