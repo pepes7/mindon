@@ -42,7 +42,6 @@ class CadastroActivity : AppCompatActivity() {
 
         }
 
-
         btn_cadastrar.setOnClickListener{
             cadastrar()
         }
@@ -81,50 +80,11 @@ class CadastroActivity : AppCompatActivity() {
             u.nome = nome
             u.email = email
 
-            val pd = ProgressDialog(this)
-            pd.setMessage("Cadastrando ...")
-            pd.show()
-
-            auth.createUserWithEmailAndPassword(u.email,senha)
-                .addOnCompleteListener {
-                    if(it.isSuccessful){
-                        val usuarios = database.child("usuarios")
-                        val ref = usuarios.child(auth!!.currentUser!!.uid)
-                        ref.setValue(u)
-
-                        Toast.makeText(this,"Usuário cadastrado com sucesso!",Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,HomeActivity::class.java))
-                    }else{
-                        try {
-                            throw it.exception!!
-                        } catch (e: FirebaseAuthWeakPasswordException) {
-                            Toast.makeText(
-                                this,
-                                "Senha fraca!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } catch (e: FirebaseAuthInvalidCredentialsException) {
-                            Toast.makeText(
-                                this,
-                                "Email inválido!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } catch (e: FirebaseAuthUserCollisionException) {
-                            Toast.makeText(
-                                this,
-                                "Usuário já cadastrado!",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        } catch (e: Exception) {
-                            Toast.makeText(
-                                this,
-                                "" + e.message,
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-                }
-
+            intent = Intent(applicationContext, EscolhaNivelActivity::class.java)
+            intent.putExtra("email", email)
+            intent.putExtra("nome", nome)
+            intent.putExtra("senha", senha)
+            startActivity(intent)
         }
 
     }

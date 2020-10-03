@@ -6,4 +6,6 @@
 
     <color name="colorBackground">#00345C</color>
 
+    <color name="btnPular">#F44336</color>
+
 </resources>

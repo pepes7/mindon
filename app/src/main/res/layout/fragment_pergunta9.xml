@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pergunta9Fragment"
+    android:background="@color/colorBackground"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="40dp"
+            >
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8dp"
+                android:text="@string/pergunta9"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_nivelamento"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="@string/pergunta9_2"
+                android:textColor="@android:color/white"
+                android:lineSpacingExtra="10dp"
+                android:textSize="@dimen/size_nivelamento"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="a) doesn't write."
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_nivelamento"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacamento_opcoes"
+                android:text="b) don't write."
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_nivelamento"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacamento_opcoes"
+                android:text="c) had not written."
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_nivelamento"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacamento_opcoes"
+                android:text="d) has not being written."
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_nivelamento"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/espacamento_opcoes"
+                android:text="e) have written."
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_nivelamento"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="80dp"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PULAR"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_shape"
+                    android:backgroundTint="@color/btnPular"
+                    android:layout_marginRight="40dp"
+                    android:textColor="@android:color/white"
+                    />
+                <Button
+                    android:id="@+id/btn_verificar9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Verificar"
+                    android:background="@drawable/button_default"
+                    android:layout_marginLeft="40dp"
+                    android:textColor="@android:color/white"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

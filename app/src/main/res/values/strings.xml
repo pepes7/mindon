@@ -5,6 +5,19 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="opcoes"><u>hurt - bet - run - shake</u></string>
+    <string name="pergunta3"><u>\" [...]   many people often confuse child slavery with child labour [...] \"</u></string>
 
 
+    <string name="pergunta9">Marque a alternativa que apresenta a ação correta do \"past perfect\"</string>
+    <string name="pergunta9_2">\" My cousin ______________ to me for weeks. \"</string>
+
+    <string name="pergunta10">Mary: \" I am about to fall a sleep. I need to wake up! \"</string>
+    <string name="pergunta10_2">Clare: \" I _______ you  some coffee. \"</string>
+
+    <string name="pergunta12"><u>The computers and devices which are part of the network can \"talk\" to each other and exchange information.</u> </string>
+    <string name="pergunta13">In the sentence \" if the criteria of quality become exacting, a cannon may emerge ...\" the part in italics is a/an : </string>
 </resources>
