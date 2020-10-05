@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="pontuacoes">Pontuações</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -20,4 +20,34 @@
 
     <string name="pergunta12"><u>The computers and devices which are part of the network can \"talk\" to each other and exchange information.</u> </string>
     <string name="pergunta13">In the sentence \" if the criteria of quality become exacting, a cannon may emerge ...\" the part in italics is a/an : </string>
+
+
+    <string name="button_settings">Chama a activity das configurações do APP</string>
+    <string name="settings">Settings</string>
+    <string name="musica_check">Música</string>
+    <string name="som_check">Som</string>
+    <string name="noti_check">Notificações</string>
+    <string name="login_check">Login com o Google</string>
+    <string name="ajuda_e_suporte">Ajuda e Suporte</string>
+    <string name="privacidade">Privacidade</string>
+    <string name="termos_de_uso">Termos de Uso</string>
+    <string name="creditos">Créditos</string>
+    <string name="sair">Sair</string>
+
+    <string name="pontuacao">Pontuação</string>
+    <string name="memory">Memory</string>
+    <string name="labrinth">Labrinth</string>
+    <string name="music">music</string>
+    <string name="undef">Undefined</string>
+    <string name="estagios">Seu recorde de <b>estágios</b> é 0.</string>
+    <string name="pontos">Você fez 0 <b>pontos</b> no total.</string>
+    <string name="horas">Você possui 0 <b>horas de jogo</b> no total.</string>
+    <string name="recordePontos">Seu <b>recorde de pontos</b> é 0.</string>
+    <string name="acertos">Você <b>acertou</b> as respostas 0 vezes.</string>
+    <string name="erros">Você <b>errou</b> as respostas 0 vezes.</string>
+    <string name="decricao1">Imagem do jogo selecionado</string>
+    <string name="memory_pont_button">Chama a Activity de pontuação do Memory</string>
+    <string name="labrinth_pont_button">Chama a activity da pontuação do Labrinth</string>
+    <string name="music_pont_button">Chama a Activity da pontuação do Music</string>
+    <string name="undef_pont_button">Chama a activity da pontuação do jogo que ainda não foi definido</string>
 </resources>

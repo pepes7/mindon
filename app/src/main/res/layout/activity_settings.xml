@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nightBlue"
+    tools:context=".SettingsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/background_settings"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:layout_marginHorizontal="25dp"
+        android:background="@drawable/background_settings"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="@string/settings"
+            android:textColor="@color/almostWhite"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/background_check"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="25dp"
+            android:background="@color/darkNightBlue"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.771"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.0">
+
+            <CheckBox
+                android:id="@+id/checkMusica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/luckiest_guy"
+                android:paddingVertical="10dp"
+                android:text="@string/musica_check"
+                android:textColor="@color/almostWhite"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/checkSom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:paddingVertical="10dp"
+                android:text="@string/som_check"
+                android:textColor="@color/almostWhite"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/checkNoti"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkMusica" />
+
+            <CheckBox
+                android:id="@+id/checkNoti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:paddingVertical="10dp"
+                android:text="@string/noti_check"
+                android:textColor="@color/almostWhite"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkSom"
+                app:layout_constraintBottom_toTopOf="@+id/checkLogin"
+                tools:layout_editor_absoluteY="146dp" />
+
+            <CheckBox
+                android:id="@+id/checkLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:paddingVertical="10dp"
+                android:text="@string/login_check"
+                android:textColor="@color/almostWhite"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkNoti" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/buttonHelp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@color/greenEmerald"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="@string/ajuda_e_suporte"
+            android:textColor="@color/almostWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonPrivacity"
+            app:layout_constraintBottom_toTopOf="@+id/buttonUse"
+            app:layout_constraintTop_toBottomOf="@+id/background_check" />
+
+        <Button
+            android:id="@+id/buttonPrivacity"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/greenEmerald"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="@string/privacidade"
+            android:textColor="@color/almostWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonHelp"
+            app:layout_constraintTop_toBottomOf="@+id/background_check" />
+
+        <Button
+            android:id="@+id/buttonUse"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@color/greenEmerald"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="@string/termos_de_uso"
+            android:textColor="@color/almostWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonHelp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonCredits"/>
+
+        <Button
+            android:id="@+id/buttonCredits"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@color/greenEmerald"
+            android:fontFamily="@font/luckiest_guy"
+            android:text="@string/creditos"
+            android:textColor="@color/almostWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonUse"
+            app:layout_constraintTop_toBottomOf="@+id/buttonPrivacity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/buttonReturnToHome"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/almostWhite"
+        android:fontFamily="@font/luckiest_guy"
+        android:text="@string/sair"
+        android:textColor="@color/darkNightBlue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/background_settings" />
+</androidx.constraintlayout.widget.ConstraintLayout>

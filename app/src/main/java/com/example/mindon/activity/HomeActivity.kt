@@ -11,7 +11,9 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.ui.AppBarConfiguration
+import com.example.mindon.ProgressMemoryActivity
 import com.example.mindon.R
+import com.example.mindon.SettingsActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -25,6 +27,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
 
         auth = FirebaseAuth.getInstance()
 
@@ -49,6 +52,18 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.home, menu)
         return true
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+      when(item.itemId){
+            R.id.action_settings -> {
+                val intent = Intent(this, ProgressMemoryActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 
@@ -70,6 +85,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else if (id == R.id.nav_perfil) {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
+        }
+        else if (id == R.id.nav_configuracoes) {
+            val intent = Intent(applicationContext, SettingsActivity::class.java)
+            startActivity(intent)
         } else if(id == R.id.nav_sair){
             val pd = ProgressDialog(this)
             pd.setMessage("Saindo ...")
@@ -82,4 +101,5 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
+
 }

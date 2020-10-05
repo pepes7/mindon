@@ -8,4 +8,10 @@
 
     <color name="btnPular">#F44336</color>
 
+    <color name="almostWhite">#effbff</color>
+    <color name="nightBlue">#00345c</color>
+    <color name="darkBlue">#081821</color>
+    <color name="darkNightBlue">#00497b</color>
+    <color name="greenEmerald">#4ed18e</color>
+
 </resources>
