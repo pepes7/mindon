@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mindon.Pergunta3Fragment
 import com.example.mindon.R
 import kotlinx.android.synthetic.main.fragment_pergunta2.view.*
 
@@ -41,7 +40,9 @@ class Pergunta2Fragment : Fragment() {
 
         view.btn_verificar2.setOnClickListener{
             val fragmentTransaction = fragmentManager!!.beginTransaction()
-            fragmentTransaction.replace(R.id.viewPage, Pergunta3Fragment()).commit()
+            fragmentTransaction.replace(R.id.viewPage,
+                Pergunta3Fragment()
+            ).commit()
         }
         return view
     }

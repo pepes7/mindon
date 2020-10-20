@@ -39,6 +39,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_opcao_a_pergunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
@@ -48,6 +49,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_opcao_b_pergunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -56,6 +58,7 @@
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_c_pergunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -64,6 +67,7 @@
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_d_pergunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -72,6 +76,7 @@
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_e_pergunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"

@@ -1,12 +1,12 @@
-package com.example.mindon
+package com.example.mindon.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_pergunta10.view.*
-import kotlinx.android.synthetic.main.fragment_pergunta8.view.*
+import com.example.mindon.R
+import kotlinx.android.synthetic.main.fragment_pergunta11.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Pergunta10Fragment.newInstance] factory method to
+ * Use the [Pergunta11Fragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Pergunta10Fragment : Fragment() {
+class Pergunta11Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,12 +35,15 @@ class Pergunta10Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view: View =  inflater.inflate(R.layout.fragment_pergunta10, container, false)
+        val view: View =  inflater.inflate(R.layout.fragment_pergunta11, container, false)
         // Inflate the layout for this fragment
 
-        view.btn_verificar10.setOnClickListener{
+        view.btn_verificar11.setOnClickListener{
             val fragmentTransaction = fragmentManager!!.beginTransaction()
-            fragmentTransaction.replace(R.id.viewPage, Pergunta11Fragment()).commit()
+            fragmentTransaction.replace(
+                R.id.viewPage,
+                Pergunta12Fragment()
+            ).commit()
         }
         return view
     }
@@ -52,12 +55,12 @@ class Pergunta10Fragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Pergunta10Fragment.
+         * @return A new instance of fragment Pergunta11Fragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Pergunta10Fragment().apply {
+            Pergunta11Fragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

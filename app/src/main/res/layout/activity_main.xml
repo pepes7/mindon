@@ -12,19 +12,55 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:src="@drawable/icone_usuario"
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imagem_perfil_editar"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/icone_usuario"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:indeterminate="true"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/imagem_perfil_editar"
+                app:layout_constraintStart_toStartOf="@+id/imagem_perfil_editar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/alterar_imagem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alterar foto do perfil"
+            android:textAlignment="center"
+            android:fontFamily="@font/luckiest_guy"
+            android:textSize="@dimen/edit_text_size"
+            android:textColor="@color/greenEmerald"
             />
 
-
         <EditText
+            android:id="@+id/txt_nome_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:fontFamily="@font/luckiest_guy"
             android:padding="@dimen/editpadding"
             android:hint="Nome"
             android:textColorHint="@android:color/white"
@@ -33,28 +69,22 @@
             android:textSize="@dimen/edit_text_size"
 
             />
+
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:padding="@dimen/editpadding"
-            android:hint="Usuário"
-            android:textColorHint="@android:color/white"
-            android:textColor="@android:color/white"
-            android:background="@drawable/edit_text_shape"
-            android:textSize="@dimen/edit_text_size"
-            />
-        <EditText
+            android:id="@+id/txt_email_perfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:padding="@dimen/editpadding"
             android:hint="E-mail"
+            android:fontFamily="@font/luckiest_guy"
+            android:editable="false"
             android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
             android:background="@drawable/edit_text_shape"
             android:textSize="@dimen/edit_text_size"
             />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,32 +92,87 @@
             android:padding="@dimen/editpadding"
             android:inputType="textPassword"
             android:hint="Senha"
+            android:fontFamily="@font/luckiest_guy"
             android:textColorHint="@android:color/white"
             android:textColor="@android:color/white"
             android:background="@drawable/edit_text_shape"
             android:textSize="@dimen/edit_text_size"
             />
 
+        <RadioGroup
+            android:id="@+id/nivelGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nível :"
+                android:fontFamily="@font/luckiest_guy"
+                android:textColor="@android:color/white"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:id="@+id/radio_basico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:buttonTint="@color/colorAccent"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="Básico"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_inter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/luckiest_guy"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:text="Intermediário"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radio_avancado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/luckiest_guy"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:text="Avançado"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+
         <Button
+            android:id="@+id/btn_atualizar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:text="Atualizar dados"
+            android:fontFamily="@font/luckiest_guy"
             android:textColor="@android:color/white"
             android:background="@drawable/button_default"
             android:textSize="@dimen/edit_text_size"
-
             />
 
         <Button
+            android:id="@+id/btn_cancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:text="SAIR"
+            android:fontFamily="@font/luckiest_guy"
             android:textColor="#409AAE"
             android:background="@drawable/button_shape"
             android:textSize="@dimen/edit_text_size"

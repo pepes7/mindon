@@ -12,6 +12,21 @@
         <!-- Fonte padrao do app -->
         <item name="android:fontFamily">@font/luckiest_guy</item>
 
+
+
+    </style>
+
+    <style name="perfilTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- cor da barra de notificações-->
+        <item name="android:statusBarColor">#021A2C</item>
+
+
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -22,5 +37,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
 
 </resources>

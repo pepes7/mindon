@@ -2,25 +2,40 @@ package com.example.mindon.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.ui.AppBarConfiguration
-import com.example.mindon.ProgressMemoryActivity
 import com.example.mindon.R
-import com.example.mindon.SettingsActivity
+import com.example.mindon.model.Usuario
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
+
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var auth: FirebaseAuth
+    private val referencia = FirebaseDatabase.getInstance().reference
+    private lateinit var nome: TextView
+    private lateinit var  imagemPerfil: CircleImageView
+    private lateinit var  storageReference: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +61,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
        navView.setNavigationItemSelectedListener(this)
+
+        storageReference =  FirebaseStorage.getInstance().reference
+
+        carregarInformacoesNav();
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -80,9 +100,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
-        if (id == R.id.nav_nome) {
-
-        } else if (id == R.id.nav_perfil) {
+        if (id == R.id.nav_perfil) {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
@@ -102,4 +120,30 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    fun carregarInformacoesNav() {
+        //acessar a referencia do nó usuarios e seu filho(usuario logados)
+        val usuario = referencia.child("usuarios").child(auth.uid!!)
+
+        //cria um listener para o nó
+        usuario.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                //recupera as informações do firebase e coloca dentro do objeto Usuario
+                val user = dataSnapshot.getValue(Usuario::class.java)!!
+                //referencia da view do nav header
+                nome = findViewById(R.id.nav_user_nome)
+                //exibe as informações
+                nome.text = user.nome
+
+                if(!user.foto.isEmpty()){
+                    imagemPerfil = findViewById(R.id.img_perfil_home);
+                    Picasso.get()
+                        .load(user.foto)
+                        .into(imagemPerfil)
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
+
+    }
 }

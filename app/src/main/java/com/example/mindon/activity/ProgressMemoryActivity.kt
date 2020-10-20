@@ -1,14 +1,16 @@
-package com.example.mindon
+package com.example.mindon.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mindon.R
 import kotlinx.android.synthetic.main.activity_progress_music.*
 
-class ProgressMusicActivity : AppCompatActivity() {
+class ProgressMemoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_progress_music)
+        setContentView(R.layout.activity_progress_memory)
+
 
         imageButton5.setOnClickListener {
             openActivityMemory()
@@ -25,7 +27,7 @@ class ProgressMusicActivity : AppCompatActivity() {
     }
 
     private fun openActivityMemory(){
-        val intent = Intent(this, ProgressMemoryActivity::class.java)
+        val intent = Intent(this, this::class.java)
         startActivity(intent)
     }
     private fun openActivityLabrinth(){
@@ -33,7 +35,7 @@ class ProgressMusicActivity : AppCompatActivity() {
         startActivity(intent)
     }
     private fun openActivityMusic(){
-        val intent = Intent(this, this::class.java)
+        val intent = Intent(this, ProgressMusicActivity::class.java)
         startActivity(intent)
     }
     private fun openActivityUndef(){

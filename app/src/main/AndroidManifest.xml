@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mindon">
 
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" /> <!-- pedir permissao para utilizar recursos da camera e galeria -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProgressUndefActivity"></activity>
-        <activity android:name=".ProgressMusicActivity" />
-        <activity android:name=".ProgressLabrinthActivity" />
-        <activity android:name=".ProgressMemoryActivity" />
-        <activity android:name=".SettingsActivity" />
+        <activity android:name=".activity.ProgressUndefActivity"></activity>
+        <activity android:name=".activity.ProgressMusicActivity" />
+        <activity android:name=".activity.ProgressLabrinthActivity" />
+        <activity android:name=".activity.ProgressMemoryActivity" />
+        <activity android:name=".activity.SettingsActivity" />
         <activity android:name=".activity.NivelamentoActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity
@@ -28,7 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.MainActivity" android:theme="@style/perfilTheme" />
     </application>
 
 </manifest>

@@ -1,10 +1,9 @@
-package com.example.mindon
+package com.example.mindon.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
-import com.example.mindon.activity.HomeActivity
-import com.example.mindon.activity.MainActivity
+import com.example.mindon.R
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity() {

@@ -1,11 +1,11 @@
-package com.example.mindon
+package com.example.mindon.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_pergunta4.view.*
+import com.example.mindon.R
 import kotlinx.android.synthetic.main.fragment_pergunta7.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +40,10 @@ class Pergunta7Fragment : Fragment() {
 
         view.btn_verificar7.setOnClickListener{
             val fragmentTransaction = fragmentManager!!.beginTransaction()
-            fragmentTransaction.replace(R.id.viewPage, Pergunta8Fragment()).commit()
+            fragmentTransaction.replace(
+                R.id.viewPage,
+                Pergunta8Fragment()
+            ).commit()
         }
         return view
     }

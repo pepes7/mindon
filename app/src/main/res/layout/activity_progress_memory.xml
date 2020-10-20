@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/nightBlue"
-    tools:context=".ProgressMemoryActivity">
+    tools:context=".activity.ProgressMemoryActivity">
 
     <TextView
         android:id="@+id/textView2"
