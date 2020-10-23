@@ -41,6 +41,7 @@
                 android:layout_marginTop="50dp"
                 >
                 <Button
+                    android:id="@+id/btn_opcao1_pergunta5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="changed has"
@@ -49,6 +50,7 @@
                     android:layout_marginRight="30dp"
                     />
                 <Button
+                    android:id="@+id/btn_opcao2_pergunta5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -68,6 +70,7 @@
                 android:layout_marginTop="30dp"
                 >
                 <Button
+                    android:id="@+id/btn_opcao3_pergunta5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="change"
@@ -76,6 +79,7 @@
                     android:layout_marginRight="30dp"
                     />
                 <Button
+                    android:id="@+id/btn_opcao4_pergunta5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -87,6 +91,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btn_opcao5_pergunta5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -104,6 +109,7 @@
                 android:layout_marginTop="80dp"
                 >
                 <Button
+                    android:id="@+id/btn_pular5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PULAR"
@@ -125,7 +131,16 @@
                     />
 
             </LinearLayout>
-
+            <Button
+                android:id="@+id/btn_nivel"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mostrar Nível"
+                android:background="@drawable/button_shape"
+                android:layout_gravity="center"
+                />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

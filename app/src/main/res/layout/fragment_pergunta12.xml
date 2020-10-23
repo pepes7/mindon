@@ -47,6 +47,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_opcao_a_pergunta12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -56,6 +57,7 @@
                 />
 
             <TextView
+                android:id="@+id/txt_opcao_b_pergunta12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -64,6 +66,7 @@
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_c_pergunta12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -72,6 +75,7 @@
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_d_pergunta12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -80,6 +84,7 @@
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_e_pergunta12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
@@ -95,6 +100,7 @@
                 android:layout_marginTop="80dp"
                 >
                 <Button
+                    android:id="@+id/btn_pular12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PULAR"
@@ -115,6 +121,16 @@
                     android:textColor="@android:color/white"
                     />
             </LinearLayout>
+            <Button
+                android:id="@+id/btn_nivel"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mostrar Nível"
+                android:background="@drawable/button_shape"
+                android:layout_gravity="center"
+                />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

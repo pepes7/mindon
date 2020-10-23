@@ -5,8 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.mindon.R
+import com.example.mindon.model.mostrarNivel
+import com.example.mindon.model.perguntas
+import com.example.mindon.model.trocaTela
+import kotlinx.android.synthetic.main.fragment_pergunta1.view.*
 import kotlinx.android.synthetic.main.fragment_pergunta7.view.*
+import kotlinx.android.synthetic.main.fragment_pergunta7.view.btn_nivel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +28,8 @@ class Pergunta7Fragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private  var selecao: String = ""
+    private var pular = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +45,28 @@ class Pergunta7Fragment : Fragment() {
     ): View? {
         val view: View =  inflater.inflate(R.layout.fragment_pergunta7, container, false)
         // Inflate the layout for this fragment
-
+        for(i in 0..12){
+            if(i != 6){
+                if(perguntas.get(i).acerto.equals("")){
+                    pular = true
+                    break
+                }
+            }
+        }
+        if(!pular){
+            view.btn_pular7.visibility = View.GONE
+        }
+        opcoes(view)
         view.btn_verificar7.setOnClickListener{
+            conferir(view)
+        }
+        
+        view.btn_pular7.setOnClickListener {
             val fragmentTransaction = fragmentManager!!.beginTransaction()
-            fragmentTransaction.replace(
-                R.id.viewPage,
-                Pergunta8Fragment()
-            ).commit()
+            trocaTela(fragmentTransaction,7)
+        }
+        view.btn_nivel.setOnClickListener {
+            mostrarNivel(context!!)
         }
         return view
     }
@@ -66,5 +89,98 @@ class Pergunta7Fragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    fun opcoes (view: View){
+        if(view.btn_verificar7.text.toString().equals("Verificar")){
+            view.btn_opcao1_pergunta7.setOnClickListener {
+                view.btn_opcao1_pergunta7.backgroundTintList = resources.getColorStateList(R.color.colorGray)
+
+
+                view.btn_opcao2_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao3_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao4_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+
+                selecao = "1"
+            }
+            view.btn_opcao2_pergunta7.setOnClickListener {
+                view.btn_opcao2_pergunta7.backgroundTintList = resources.getColorStateList(R.color.colorGray)
+
+                view.btn_opcao1_pergunta7.backgroundTintList=  resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao3_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao4_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+
+
+                selecao = "2"
+            }
+            view.btn_opcao3_pergunta7.setOnClickListener {
+                view.btn_opcao3_pergunta7.backgroundTintList = resources.getColorStateList(R.color.colorGray)
+
+                view.btn_opcao2_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao1_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao4_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+
+                selecao = "3"
+            }
+            view.btn_opcao4_pergunta7.setOnClickListener {
+                view.btn_opcao4_pergunta7.backgroundTintList = resources.getColorStateList(R.color.colorGray)
+
+                view.btn_opcao2_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao3_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+                view.btn_opcao1_pergunta7.backgroundTintList = resources.getColorStateList(R.color.almostWhite)
+
+
+                selecao = "4"
+            }
+        }else{
+            view.btn_opcao1_pergunta7.setOnClickListener {
+
+            }
+            view.btn_opcao2_pergunta7.setOnClickListener {
+
+            }
+            view.btn_opcao3_pergunta7.setOnClickListener {
+
+            }
+            view.btn_opcao4_pergunta7.setOnClickListener {
+
+            }
+        }
+    }
+
+    private fun conferir(view:View){
+        if(view.btn_verificar7.text.toString().equals("Verificar")){
+          if(selecao.equals("1")){
+              view.btn_opcao1_pergunta7.backgroundTintList = resources.getColorStateList(R.color.btnPular)
+          }else if(selecao.equals(("2"))){
+              view.btn_opcao2_pergunta7.backgroundTintList = resources.getColorStateList(R.color.btnPular)
+          }else if(selecao.equals("4")){
+              view.btn_opcao4_pergunta7.backgroundTintList = resources.getColorStateList(R.color.btnPular)
+          }
+
+          if(selecao.equals("")){
+              Toast.makeText(context,"Nenhuma opção selecionada", Toast.LENGTH_SHORT).show()
+          }else{
+              view.btn_opcao3_pergunta7.backgroundTintList = resources.getColorStateList(R.color.greenEmerald)
+              if(selecao.equals("3")){
+                  perguntas.get(6).acerto = "true"
+              }else{
+                  perguntas.get(6).acerto = "false"
+              }
+              if(!pular){
+                  view.btn_verificar7.text = "Próxima"
+                  view.btn_verificar7.visibility = View.GONE
+                  view.btn_nivel.visibility = View.VISIBLE
+                  opcoes(view)
+              }else{
+                  view.btn_verificar7.text = "Próxima"
+                  view.btn_pular7.visibility = View.GONE
+                  opcoes(view)
+              }
+          }
+      }else{
+          val fragmentTransaction = fragmentManager!!.beginTransaction()
+          trocaTela(fragmentTransaction,7)
+      }
     }
 }

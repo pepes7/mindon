@@ -36,35 +36,39 @@
                 />
 
             <TextView
+                android:id="@+id/txt_opcao_a_pergunta8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
-                android:text="( ) the biggest."
+                android:text="a) the biggest."
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/size_nivelamento"
                 />
 
             <TextView
+                android:id="@+id/txt_opcao_b_pergunta8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
-                android:text="( ) the big."
+                android:text="b) the big."
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_c_pergunta8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
-                android:text="( ) the most big."
+                android:text="c) the most big."
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/size_nivelamento"
                 />
             <TextView
+                android:id="@+id/txt_opcao_d_pergunta8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/espacamento_opcoes"
-                android:text="( ) the best."
+                android:text="d) the best."
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/size_nivelamento"
                 />
@@ -76,6 +80,7 @@
                 android:layout_marginTop="80dp"
                 >
                 <Button
+                    android:id="@+id/btn_pular8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PULAR"
@@ -96,6 +101,16 @@
                     android:textColor="@android:color/white"
                     />
             </LinearLayout>
+            <Button
+                android:id="@+id/btn_nivel"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mostrar Nível"
+                android:background="@drawable/button_shape"
+                android:layout_gravity="center"
+                />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

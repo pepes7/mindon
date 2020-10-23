@@ -92,6 +92,7 @@
                 android:layout_marginTop="80dp"
                 >
                 <Button
+                    android:id="@+id/btn_pular1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PULAR"
@@ -113,6 +114,17 @@
                     />
 
             </LinearLayout>
+            <Button
+                android:id="@+id/btn_nivel"
+                android:layout_marginTop="30dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mostrar Nível"
+                android:background="@drawable/button_shape"
+                android:layout_gravity="center"
+                />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

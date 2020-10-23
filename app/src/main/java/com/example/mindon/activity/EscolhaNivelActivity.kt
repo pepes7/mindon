@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.mindon.R
 import com.example.mindon.model.Usuario
+import com.example.mindon.model.userNivelamento
+import com.example.mindon.model.userSenha
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -28,6 +30,11 @@ class EscolhaNivelActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         btn_nivelamento.setOnClickListener{
+            dados = intent.extras!!
+            userNivelamento = Usuario()
+            userNivelamento.nome = dados.getString("nome").toString()
+            userNivelamento.email = dados.getString("email").toString()
+            userSenha = dados.getString("senha").toString()
             startActivity(Intent(this,NivelamentoActivity::class.java))
         }
 
