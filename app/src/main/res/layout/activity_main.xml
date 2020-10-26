@@ -13,7 +13,6 @@
         android:orientation="vertical"
         android:padding="30dp">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,21 +83,6 @@
             android:background="@drawable/edit_text_shape"
             android:textSize="@dimen/edit_text_size"
             />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:padding="@dimen/editpadding"
-            android:inputType="textPassword"
-            android:hint="Senha"
-            android:fontFamily="@font/luckiest_guy"
-            android:textColorHint="@android:color/white"
-            android:textColor="@android:color/white"
-            android:background="@drawable/edit_text_shape"
-            android:textSize="@dimen/edit_text_size"
-            />
-
         <RadioGroup
             android:id="@+id/nivelGroup"
             android:layout_width="match_parent"
@@ -148,7 +132,17 @@
                 android:text="Avançado"
                 android:textSize="18sp" />
         </RadioGroup>
-
+        <TextView
+            android:id="@+id/alterar_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/alterar_senha"
+            android:textSize="@dimen/edit_text_size"
+            android:fontFamily="@font/luckiest_guy"
+            android:textColor="@android:color/white"
+            android:textAlignment="textEnd"
+            />
 
         <Button
             android:id="@+id/btn_atualizar"

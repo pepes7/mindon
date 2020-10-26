@@ -21,6 +21,7 @@
     <string name="pergunta12"><u>The computers and devices which are part of the network can \"talk\" to each other and exchange information.</u> </string>
     <string name="pergunta13">In the sentence \" if the criteria of quality become exacting, a cannon may emerge ...\" the part in italics is a/an : </string>
 
+    <string name="alterar_senha"><u>Alterar Senha</u></string>
 
     <string name="button_settings">Chama a activity das configurações do APP</string>
     <string name="settings">Settings</string>
@@ -50,4 +51,19 @@
     <string name="labrinth_pont_button">Chama a activity da pontuação do Labrinth</string>
     <string name="music_pont_button">Chama a Activity da pontuação do Music</string>
     <string name="undef_pont_button">Chama a activity da pontuação do jogo que ainda não foi definido</string>
+
+
+    <string name="skins">Skins Shop</string>
+    <string name="games">Games</string>
+    <string name="scores">Scores</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="buttonMemory">Memory</string>
+    <string name="buttonLabrinth">Labrinth</string>
+    <string name="buttonMusic">Music</string>
+    <string name="buttonUndef">Undefined</string>
+    <string name="CharacterImgDesc">Skin que pode ser alterada</string>
+    <string name="pontoEstagios">Seu recorde de estágios é 0.</string>
+    <string name="pontoTotal">Você fez 0 pontos no total.</string>
+    <string name="maxPontosEstagio">Sua maior pontuação em um estágio foi 0.</string>
+    <string name="pontoMemory">Memory</string>
 </resources>

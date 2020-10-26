@@ -77,6 +77,43 @@ class MainActivity : AppCompatActivity() {
         btn_cancelar.setOnClickListener {
             finish()
         }
+        alterar_senha.setOnClickListener {
+            alterarSenha()
+        }
+    }
+
+    fun alterarSenha(){
+        val builder = AlertDialog.Builder(this,R.style.Theme_AppCompat_Light_Dialog)
+        builder.setTitle("Confirmação para alterar senha")
+        builder.setMessage("Enviaremos um email para alteração de sua senha")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Alterar Senha" ){ dialogInterface, i ->
+            resetar()
+        }
+        builder.setNegativeButton("CANCELAR"){dialogInterface, i ->
+
+        }
+
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+    fun resetar(){
+        if(!txt_email_perfil.text.toString().isEmpty()){
+            val pd = ProgressDialog(this)
+            pd.setMessage("Enviando email ...")
+            pd.show()
+            auth.sendPasswordResetEmail(txt_email_perfil.text.toString()).addOnCompleteListener {
+                if (it.isSuccessful){
+                    Toast.makeText(this,"Email enviado com sucesso!", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this,HomeActivity::class.java))
+                    pd.dismiss()
+                }else{
+                    Toast.makeText(this, "Erro ao enviar o email, tente novamente.", Toast.LENGTH_SHORT).show();
+                    pd.dismiss()
+                }
+            }
+        }
     }
 
     fun mudarFoto() {

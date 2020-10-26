@@ -15,14 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ProgressUndefActivity"></activity>
+        <activity android:name=".activity.MemoryActivity" android:parentActivityName=".activity.HomeActivity"></activity>
+        <activity
+            android:name=".activity.AjudaActivity"
+            android:parentActivityName=".activity.HomeActivity" />
+        <activity android:name=".activity.ProgressUndefActivity" />
         <activity android:name=".activity.ProgressMusicActivity" />
         <activity android:name=".activity.ProgressLabrinthActivity" />
         <activity android:name=".activity.ProgressMemoryActivity" />
         <activity android:name=".activity.SettingsActivity" />
-        <activity android:name=".activity.NivelamentoActivity" >
-
-        </activity>
+        <activity android:name=".activity.NivelamentoActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity
             android:name=".activity.HomeActivity"
@@ -36,7 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" android:theme="@style/perfilTheme" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:theme="@style/perfilTheme" />
     </application>
 
 </manifest>

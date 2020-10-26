@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="80dp">
+
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/tablePoints"
+          android:layout_width="match_parent"
+          android:layout_height="300dp"
+          android:layout_marginTop="40dp"
+          android:layout_marginHorizontal="20dp">
+
+         <ImageView
+             android:id="@+id/memoryImageView"
+             android:layout_width="200dp"
+             android:layout_height="200dp"
+             android:background="@drawable/memory_icon"
+             app:layout_constraintEnd_toEndOf="@+id/tablePoints"
+             app:layout_constraintStart_toStartOf="@id/tablePoints"
+             app:layout_constraintTop_toTopOf="@id/tablePoints" />
+
+         <TextView
+             android:id="@+id/pontoMemory"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:fontFamily="@font/luckiest_guy"
+             android:text="@string/pontoMemory"
+             android:textColor="@color/almostWhite"
+             android:textSize="24sp"
+             android:layout_marginTop="15dp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/memoryImageView" />
+
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/backgroundText"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="60dp"
+             android:layout_marginBottom="10dp"
+             android:background="@drawable/pont_text_background"
+             android:padding="10dp"
+             app:layout_constraintBottom_toTopOf="@id/backgroundText2"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/memoryImageView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="@string/pontoEstagios"
+                android:textColor="@color/almostWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/backgroundText2"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginVertical="10dp"
+             android:background="@drawable/pont_text_background"
+             android:padding="10dp"
+             app:layout_constraintBottom_toTopOf="@id/backgroundText3"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintHorizontal_bias="0.0"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/backgroundText">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="@string/pontoTotal"
+                android:textColor="@color/almostWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/backgroundText3"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginVertical="10dp"
+             android:background="@drawable/pont_text_background"
+             android:padding="10dp"
+             app:layout_constraintBottom_toTopOf="@id/backgroundText4"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/backgroundText2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="@string/maxPontosEstagio"
+                android:textColor="@color/almostWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/backgroundText4"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginVertical="10dp"
+             android:background="@drawable/pont_text_background"
+             android:padding="10dp"
+             app:layout_constraintBottom_toTopOf="@id/backgroundText5"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/backgroundText3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="@string/acertos"
+                android:textColor="@color/almostWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+         </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:id="@+id/backgroundText5"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:background="@drawable/pont_text_background"
+             android:padding="10dp"
+             app:layout_constraintBottom_toBottomOf="@id/tablePoints"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/backgroundText4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/luckiest_guy"
+                android:text="@string/erros"
+                android:textColor="@color/almostWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+         </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </ScrollView>
+</FrameLayout>

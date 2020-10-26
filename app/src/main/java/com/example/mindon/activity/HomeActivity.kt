@@ -14,6 +14,10 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.ui.AppBarConfiguration
+import com.example.homemindon.view.MainFragment
+import com.example.homemindon.view.ScoresFragment
+import com.example.homemindon.view.SkinsFragment
+import com.example.homemindon.view.ViewPagerAdapter
 import com.example.mindon.R
 import com.example.mindon.model.Usuario
 import com.google.android.material.navigation.NavigationView
@@ -26,11 +30,12 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.content_main.*
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+
     private lateinit var auth: FirebaseAuth
     private val referencia = FirebaseDatabase.getInstance().reference
     private lateinit var nome: TextView
@@ -66,8 +71,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         carregarInformacoesNav();
 
+        setUpTabs()
     }
 
+    private fun setUpTabs(){
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(SkinsFragment(), "")
+        adapter.addFragment(MainFragment(), "")
+        adapter.addFragment(ScoresFragment(), "")
+        viewPager.adapter = adapter
+        tabs.setupWithViewPager(viewPager)
+
+        tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_local_mall_24)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_sports_esports_24)
+        tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_emoji_events_24)
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.home, menu)
@@ -113,6 +131,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             pd.show()
             auth.signOut()
             startActivity(Intent(this,CadastroActivity::class.java))
+        }else if(id == R.id.nav_ajuda){
+            val intent = Intent(applicationContext, AjudaActivity::class.java)
+            startActivity(intent)
         }
 
         val drawer: DrawerLayout = findViewById(R.id.drawer_layout)

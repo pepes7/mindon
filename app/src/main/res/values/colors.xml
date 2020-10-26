@@ -14,7 +14,11 @@
     <color name="darkNightBlue">#00497b</color>
     <color name="greenEmerald">#4ed18e</color>
 
-    <color name="colorGray">#6F816F</color>
+    <color name="colorGray">#586058</color>
+
+
+    <color name="orangeForButton">#f78a00</color>
+
 
 
 </resources>

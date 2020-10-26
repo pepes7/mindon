@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AjudaActivity"
+    android:background="@color/colorBackground"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_ajuda"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@android:color/white"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <EditText
+            android:id="@+id/edit_problema"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:lineSpacingExtra="8dp"
+            android:textColor="@android:color/white"
+            android:hint="Descreva o problema"
+            android:textColorHint="@color/colorGray"
+            android:backgroundTint="@color/greenEmerald"
+            android:gravity="start|top"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/btn_enviar_problema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Enviar Email  "
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_default"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+
+</ScrollView>
