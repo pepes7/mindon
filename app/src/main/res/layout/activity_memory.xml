@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".activity.MemoryActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/a_lua"
         >
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_memory"
@@ -17,116 +17,117 @@
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@android:color/white"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
             android:orientation="horizontal"
-            android:padding="10dp"
+            android:gravity="center"
             >
             <Button
                 android:id="@+id/btn_banana1"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
             <Button
                 android:id="@+id/btn_banana2"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
 
             <Button
                 android:id="@+id/btn_banana3"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:padding="10dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             android:orientation="horizontal">
             <Button
                 android:id="@+id/btn_banana4"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
             <Button
                 android:id="@+id/btn_banana5"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
 
             <Button
                 android:id="@+id/btn_banana6"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
 
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:padding="10dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             >
             <Button
                 android:id="@+id/btn_banana7"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
             <Button
                 android:id="@+id/btn_banana8"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
 
             <Button
                 android:id="@+id/btn_banana9"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_height="130dp"
+                android:background="@drawable/carta"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/banana_1"
                 />
 
         </LinearLayout>
         <Button
             android:id="@+id/btn_banana10"
             android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="130dp"
             android:layout_gravity="center"
-            android:background="@drawable/banana_1"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/carta"
             />
     </LinearLayout>
-
 </ScrollView>

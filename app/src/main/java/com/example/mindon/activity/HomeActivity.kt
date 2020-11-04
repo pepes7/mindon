@@ -20,6 +20,7 @@ import com.example.homemindon.view.SkinsFragment
 import com.example.homemindon.view.ViewPagerAdapter
 import com.example.mindon.R
 import com.example.mindon.model.Usuario
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -78,13 +79,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val adapter = ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(SkinsFragment(), "")
         adapter.addFragment(MainFragment(), "")
-        adapter.addFragment(ScoresFragment(), "")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
         tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_local_mall_24)
         tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_sports_esports_24)
-        tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_emoji_events_24)
+
+        tabs.getTabAt(1)!!.select()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -141,7 +142,26 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    fun carregarInformacoesNav() {
+    fun carregarInformacoesNav(){
+
+        /*ccodigo para futura implementação*
+        val signInAccount = GoogleSignIn.getLastSignedInAccount(this)
+
+        if(signInAccount != null){
+            //referencia da view do nav header
+            nome = findViewById(R.id.nav_user_nome)
+            //exibe as informações
+            nome.text = signInAccount.displayName
+            imagemPerfil = findViewById(R.id.img_perfil_home);
+            Picasso.get()
+                .load(signInAccount.photoUrl)
+                .into(imagemPerfil)
+
+        }else{
+
+        }*/
+
+
         //acessar a referencia do nó usuarios e seu filho(usuario logados)
         val usuario = referencia.child("usuarios").child(auth.uid!!)
 
@@ -165,6 +185,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             override fun onCancelled(databaseError: DatabaseError) {}
         })
+
 
     }
 }

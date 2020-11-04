@@ -7,22 +7,29 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mindon.R
 import com.example.mindon.model.Usuario
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.*
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_cadastro.*
 
 class CadastroActivity : AppCompatActivity() {
 
+    private val RC_SIGN_IN = 100
+
     private lateinit var database : DatabaseReference
     private lateinit var auth: FirebaseAuth
+    private lateinit var googleSignInClient: GoogleSignInClient
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +47,20 @@ class CadastroActivity : AppCompatActivity() {
         if(auth.currentUser!= null){
             startActivity(Intent(this,HomeActivity::class.java))
 
+        }
+
+
+        // Configura o Token do Google
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        btn_cadastro_google.setOnClickListener{
+            val signInIntent = googleSignInClient.signInIntent
+            startActivityForResult(signInIntent, RC_SIGN_IN)
         }
 
         btn_cadastrar.setOnClickListener{
@@ -86,6 +107,36 @@ class CadastroActivity : AppCompatActivity() {
             intent.putExtra("senha", senha)
             startActivity(intent)
         }
+    }
 
+    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+/*
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account!!)
+            } catch (e: ApiException) {
+                e.printStackTrace()
+                Toast.makeText(applicationContext,e.message,Toast.LENGTH_SHORT).show()
+            }
+        }*/
+    }
+
+    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
+        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val intent = Intent(this@CadastroActivity, HomeActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    Toast.makeText(applicationContext,"Cadastro realizado com sucesso",Toast.LENGTH_SHORT).show()
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(applicationContext,"Falha ao tentar autenticar com o google",Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }

@@ -39,7 +39,7 @@ class MemoryActivity : AppCompatActivity() {
     fun opcoes(){
         if(cont != 2){
             btn_banana1.setOnClickListener {
-                btn_banana1.setBackgroundResource(R.drawable.button_shape)
+                btn_banana1.setBackgroundResource(R.color.orangeForButton)
                 btn_banana1.text = "Car"
                 cont+=1
                 car = true
@@ -47,7 +47,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana2.setOnClickListener {
-                btn_banana2.setBackgroundResource(R.drawable.button_shape)
+                btn_banana2.setBackgroundResource(R.color.orangeForButton)
                 btn_banana2.text = "Casa"
                 casa = true
                 cont+=1
@@ -55,7 +55,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana3.setOnClickListener {
-                btn_banana3.setBackgroundResource(R.drawable.button_shape)
+                btn_banana3.setBackgroundResource(R.color.orangeForButton)
                 btn_banana3.text = "House"
                 cont+=1
                 house = true
@@ -63,7 +63,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana4.setOnClickListener {
-                btn_banana4.setBackgroundResource(R.drawable.button_shape)
+                btn_banana4.setBackgroundResource(R.color.orangeForButton)
                 btn_banana4.text = "Azul"
                 cont+=1
                 azul = true
@@ -71,7 +71,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana5.setOnClickListener {
-                btn_banana5.setBackgroundResource(R.drawable.button_shape)
+                btn_banana5.setBackgroundResource(R.color.orangeForButton)
                 btn_banana5.text = "Rosa"
                 cont+=1
                 rosa = true
@@ -79,7 +79,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana6.setOnClickListener {
-                btn_banana6.setBackgroundResource(R.drawable.button_shape)
+                btn_banana6.setBackgroundResource(R.color.orangeForButton)
                 btn_banana6.text = "Apple"
                 cont+=1
                 apple = true
@@ -87,7 +87,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana7.setOnClickListener {
-                btn_banana7.setBackgroundResource(R.drawable.button_shape)
+                btn_banana7.setBackgroundResource(R.color.orangeForButton)
                 btn_banana7.text = "Blue"
                 cont+=1
                 blue = true
@@ -95,7 +95,7 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana8.setOnClickListener {
-                btn_banana8.setBackgroundResource(R.drawable.button_shape)
+                btn_banana8.setBackgroundResource(R.color.orangeForButton)
                 btn_banana8.text = "Maça"
                 cont+=1
                 maca = true
@@ -103,14 +103,14 @@ class MemoryActivity : AppCompatActivity() {
             }
 
             btn_banana9.setOnClickListener {
-                btn_banana9.setBackgroundResource(R.drawable.button_shape)
+                btn_banana9.setBackgroundResource(R.color.orangeForButton)
                 btn_banana9.text = "Carro"
                 cont+=1
                 carro =true
                 opcoes()
             }
             btn_banana10.setOnClickListener {
-                btn_banana10.setBackgroundResource(R.drawable.button_shape)
+                btn_banana10.setBackgroundResource(R.color.orangeForButton)
                 btn_banana10.text = "Pink"
                 cont+=1
                 pink = true
@@ -173,7 +173,7 @@ class MemoryActivity : AppCompatActivity() {
     }
     fun todosBananas(){
         if (!(car && carro)){
-            btn_banana1.setBackgroundResource(R.drawable.banana_1)
+            btn_banana1.setBackgroundResource(R.drawable.carta)
             btn_banana1.text = ""
             car = false
         }else{
@@ -181,7 +181,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(casa && house)){
-            btn_banana2.setBackgroundResource(R.drawable.banana_1)
+            btn_banana2.setBackgroundResource(R.drawable.carta)
             btn_banana2.text = ""
             casa = false
         }else{
@@ -189,7 +189,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(casa && house)){
-            btn_banana3.setBackgroundResource(R.drawable.banana_1)
+            btn_banana3.setBackgroundResource(R.drawable.carta)
             btn_banana3.text = ""
             casa = false
         }else{
@@ -197,7 +197,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(azul && blue)){
-            btn_banana4.setBackgroundResource(R.drawable.banana_1)
+            btn_banana4.setBackgroundResource(R.drawable.carta)
             btn_banana4.text = ""
             azul = false
         }else{
@@ -205,7 +205,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(rosa && pink)){
-            btn_banana5.setBackgroundResource(R.drawable.banana_1)
+            btn_banana5.setBackgroundResource(R.drawable.carta)
             btn_banana5.text = ""
             rosa = false
         }else{
@@ -213,7 +213,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(apple && maca)){
-            btn_banana6.setBackgroundResource(R.drawable.banana_1)
+            btn_banana6.setBackgroundResource(R.drawable.carta)
             btn_banana6.text = ""
             apple = false
         }else{
@@ -222,7 +222,7 @@ class MemoryActivity : AppCompatActivity() {
 
 
         if (!(azul && blue)){
-            btn_banana7.setBackgroundResource(R.drawable.banana_1)
+            btn_banana7.setBackgroundResource(R.drawable.carta)
             btn_banana7.text = ""
             blue = false
         }else{
@@ -231,7 +231,7 @@ class MemoryActivity : AppCompatActivity() {
 
 
         if (!(maca && apple)){
-            btn_banana8.setBackgroundResource(R.drawable.banana_1)
+            btn_banana8.setBackgroundResource(R.drawable.carta)
             btn_banana8.text = ""
             maca = false
         }else{
@@ -239,7 +239,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(car && carro)){
-            btn_banana9.setBackgroundResource(R.drawable.banana_1)
+            btn_banana9.setBackgroundResource(R.drawable.carta)
             btn_banana9.text = ""
             carro = false
         }else{
@@ -247,7 +247,7 @@ class MemoryActivity : AppCompatActivity() {
         }
 
         if (!(rosa && pink)){
-            btn_banana10.setBackgroundResource(R.drawable.banana_1)
+            btn_banana10.setBackgroundResource(R.drawable.carta)
             btn_banana10.text = ""
             pink = false
         }else{
