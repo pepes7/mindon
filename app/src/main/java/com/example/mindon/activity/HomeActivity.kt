@@ -143,19 +143,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun carregarInformacoesNav(){
-
-        /*ccodigo para futura implementação*
-        val signInAccount = GoogleSignIn.getLastSignedInAccount(this)
+        /*val signInAccount = GoogleSignIn.getLastSignedInAccount(this)
 
         if(signInAccount != null){
-            //referencia da view do nav header
-            nome = findViewById(R.id.nav_user_nome)
-            //exibe as informações
-            nome.text = signInAccount.displayName
-            imagemPerfil = findViewById(R.id.img_perfil_home);
-            Picasso.get()
-                .load(signInAccount.photoUrl)
-                .into(imagemPerfil)
 
         }else{
 
