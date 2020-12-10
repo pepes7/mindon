@@ -6,7 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.example.mindon.R
+import com.example.mindon.model.Usuario
 import com.example.mindon.model.cadastrar
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_memory.*
 
 class MemoryActivity : AppCompatActivity() {
@@ -23,6 +29,7 @@ class MemoryActivity : AppCompatActivity() {
     private var maca = false
     private var azul = false
     private var rosa = false
+    private var banana = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,12 +42,35 @@ class MemoryActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         opcoes()
+
+        carregar()
+    }
+
+    fun carregar(){
+        FirebaseDatabase.getInstance().reference.child("usuarios").child(FirebaseAuth.getInstance().uid!!).addValueEventListener(object :
+            ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val u = dataSnapshot.getValue(Usuario::class.java)!!
+                if (u.banana.isEmpty()){
+                    banana = 20
+                }else{
+                    banana = u.banana.toInt() +20
+
+                }
+
+            }
+
+        })
     }
     fun opcoes(){
         if(cont != 2){
             btn_banana1.setOnClickListener {
                 btn_banana1.setBackgroundResource(R.color.orangeForButton)
-                btn_banana1.text = "Car"
+                btn_banana1.text = "I think the movie is going to be good"
                 cont+=1
                 car = true
                 opcoes()
@@ -48,7 +78,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana2.setOnClickListener {
                 btn_banana2.setBackgroundResource(R.color.orangeForButton)
-                btn_banana2.text = "Casa"
+                btn_banana2.text = "He is very happy"
                 casa = true
                 cont+=1
                 opcoes()
@@ -56,7 +86,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana3.setOnClickListener {
                 btn_banana3.setBackgroundResource(R.color.orangeForButton)
-                btn_banana3.text = "House"
+                btn_banana3.text = "Ele está muito feliz"
                 cont+=1
                 house = true
                 opcoes()
@@ -64,7 +94,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana4.setOnClickListener {
                 btn_banana4.setBackgroundResource(R.color.orangeForButton)
-                btn_banana4.text = "Azul"
+                btn_banana4.text = "Ela comprou alguns livros"
                 cont+=1
                 azul = true
                 opcoes()
@@ -72,7 +102,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana5.setOnClickListener {
                 btn_banana5.setBackgroundResource(R.color.orangeForButton)
-                btn_banana5.text = "Rosa"
+                btn_banana5.text = "Que surpresa boa!"
                 cont+=1
                 rosa = true
                 opcoes()
@@ -80,7 +110,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana6.setOnClickListener {
                 btn_banana6.setBackgroundResource(R.color.orangeForButton)
-                btn_banana6.text = "Apple"
+                btn_banana6.text = "When will you be back?"
                 cont+=1
                 apple = true
                 opcoes()
@@ -88,7 +118,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana7.setOnClickListener {
                 btn_banana7.setBackgroundResource(R.color.orangeForButton)
-                btn_banana7.text = "Blue"
+                btn_banana7.text = "She bought some books"
                 cont+=1
                 blue = true
                 opcoes()
@@ -96,7 +126,7 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana8.setOnClickListener {
                 btn_banana8.setBackgroundResource(R.color.orangeForButton)
-                btn_banana8.text = "Maça"
+                btn_banana8.text = "Quando você estará de volta"
                 cont+=1
                 maca = true
                 opcoes()
@@ -104,14 +134,14 @@ class MemoryActivity : AppCompatActivity() {
 
             btn_banana9.setOnClickListener {
                 btn_banana9.setBackgroundResource(R.color.orangeForButton)
-                btn_banana9.text = "Carro"
+                btn_banana9.text = "Acho que o filme vai ser bom"
                 cont+=1
                 carro =true
                 opcoes()
             }
             btn_banana10.setOnClickListener {
                 btn_banana10.setBackgroundResource(R.color.orangeForButton)
-                btn_banana10.text = "Pink"
+                btn_banana10.text = "What a nice surprise!"
                 cont+=1
                 pink = true
                 opcoes()
@@ -256,9 +286,10 @@ class MemoryActivity : AppCompatActivity() {
     }
 
     fun parabens(){
-        val builder = AlertDialog.Builder(this,R.style.Theme_AppCompat_Light_Dialog)
+        FirebaseDatabase.getInstance().reference.child("usuarios").child(FirebaseAuth.getInstance().uid!!).child("banana").setValue(banana.toString())
+        val builder = AlertDialog.Builder(this, R.style.Theme_AppCompat_Light_Dialog)
         builder.setTitle("Parabéns")
-        builder.setMessage("Você concluiu o jogo da Memória")
+        builder.setMessage("Você concluiu o jogo da Memória. Recebeu 20 bananas")
         builder.setCancelable(false)
         builder.setPositiveButton("Voltar" ){ dialogInterface, i ->
             finish()

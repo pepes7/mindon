@@ -22,7 +22,8 @@ open class Usuario(
     open var nome : String = "",
     open var email : String = "",
     open var foto : String = "",
-    open var nivel : String = ""
+    open var nivel : String = "",
+    open var banana : String = ""
 )
 
 open class Pergunta(
@@ -33,6 +34,12 @@ open class Pergunta(
 var perguntas = mutableListOf<Pergunta>()
 var userNivelamento : Usuario  = Usuario()
 var userSenha = ""
+
+var idUser = ""
+
+var nivelUser = ""
+
+var bananaGlobbal = ""
 
 fun trocaTela(fragmentTransaction : FragmentTransaction, atual: Int){
     var fragment : Fragment

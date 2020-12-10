@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mindon.R
 import com.example.mindon.helper.Permissao
 import com.example.mindon.model.Usuario
+import com.example.mindon.model.bananaGlobbal
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
@@ -184,6 +185,7 @@ class MainActivity : AppCompatActivity() {
                     nome.text = u.nome
                     email.text = u.email
 
+                    bananaGlobbal = u.banana
                     if(u.nivel.equals("basico")){
                         rbBasico.isChecked = true
                         rbInter.isChecked = false

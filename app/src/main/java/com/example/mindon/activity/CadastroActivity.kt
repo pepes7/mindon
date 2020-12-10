@@ -1,18 +1,16 @@
 package com.example.mindon.activity
 
-import android.app.ProgressDialog
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
-import android.util.Log
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.mindon.R
 import com.example.mindon.model.Usuario
-import com.example.mindon.model.userNivelamento
+import com.example.mindon.model.idUser
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -138,6 +136,8 @@ class CadastroActivity : AppCompatActivity() {
                     u.nome = signInAccount!!.displayName.toString()
                     u.email = signInAccount!!.email.toString()
                     u.foto = signInAccount!!.photoUrl.toString()
+
+                  idUser = signInAccount!!.id.toString()
                     ref.setValue(u).addOnCompleteListener {
                         if (it.isSuccessful){
                             val intent = Intent(this@CadastroActivity, HomeActivity::class.java)

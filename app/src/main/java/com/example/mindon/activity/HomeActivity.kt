@@ -20,6 +20,8 @@ import com.example.homemindon.view.SkinsFragment
 import com.example.homemindon.view.ViewPagerAdapter
 import com.example.mindon.R
 import com.example.mindon.model.Usuario
+import com.example.mindon.model.idUser
+import com.example.mindon.model.nivelUser
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -35,7 +37,6 @@ import kotlinx.android.synthetic.main.content_main.*
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
 
     private lateinit var auth: FirebaseAuth
     private val referencia = FirebaseDatabase.getInstance().reference
@@ -143,38 +144,62 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun carregarInformacoesNav(){
-        /*val signInAccount = GoogleSignIn.getLastSignedInAccount(this)
-
+        val signInAccount = GoogleSignIn.getLastSignedInAccount(this)
         if(signInAccount != null){
+            //acessar a referencia do nó usuarios e seu filho(usuario logados)
+            val usuario = referencia.child("usuarios").child(idUser)
+
+            //cria um listener para o nó
+            usuario.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    //recupera as informações do firebase e coloca dentro do objeto Usuario
+                    val user = dataSnapshot.getValue(Usuario::class.java)!!
+                    //referencia da view do nav header
+                    nome = findViewById(R.id.nav_user_nome)
+                    //exibe as informações
+                    nome.text = user.nome
+
+                    nivelUser = user.nivel
+
+                    if(!user.foto.isEmpty()){
+                        imagemPerfil = findViewById(R.id.img_perfil_home);
+                        Picasso.get()
+                            .load(user.foto)
+                            .into(imagemPerfil)
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
 
         }else{
+            //acessar a referencia do nó usuarios e seu filho(usuario logados)
+            val usuario = referencia.child("usuarios").child(auth.uid!!)
 
-        }*/
+            //cria um listener para o nó
+            usuario.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    //recupera as informações do firebase e coloca dentro do objeto Usuario
+                    val user = dataSnapshot.getValue(Usuario::class.java)!!
+                    //referencia da view do nav header
+                    nome = findViewById(R.id.nav_user_nome)
+                    //exibe as informações
+                    nome.text = user.nome
 
-
-        //acessar a referencia do nó usuarios e seu filho(usuario logados)
-        val usuario = referencia.child("usuarios").child(auth.uid!!)
-
-        //cria um listener para o nó
-        usuario.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                //recupera as informações do firebase e coloca dentro do objeto Usuario
-                val user = dataSnapshot.getValue(Usuario::class.java)!!
-                //referencia da view do nav header
-                nome = findViewById(R.id.nav_user_nome)
-                //exibe as informações
-                nome.text = user.nome
-
-                if(!user.foto.isEmpty()){
-                    imagemPerfil = findViewById(R.id.img_perfil_home);
-                    Picasso.get()
-                        .load(user.foto)
-                        .into(imagemPerfil)
+                    nivelUser = user.nivel
+                    if(!user.foto.isEmpty()){
+                        imagemPerfil = findViewById(R.id.img_perfil_home);
+                        Picasso.get()
+                            .load(user.foto)
+                            .into(imagemPerfil)
+                    }
                 }
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
+
+        }
+
 
 
     }

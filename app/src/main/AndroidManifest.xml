@@ -15,7 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MemoryActivity" android:parentActivityName=".activity.HomeActivity"></activity>
+        <activity android:name=".activity.MemoryAvancadoActivity"></activity>
+        <activity android:name=".activity.MemoryInterActivity" />
+        <activity
+            android:name=".activity.JogoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MemoryActivity"
+            android:parentActivityName=".activity.HomeActivity" />
         <activity
             android:name=".activity.AjudaActivity"
             android:parentActivityName=".activity.HomeActivity" />
@@ -26,18 +33,19 @@
         <activity android:name=".activity.SettingsActivity" />
         <activity android:name=".activity.NivelamentoActivity" />
         <activity android:name=".activity.LoginActivity" />
-        <activity
-            android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.EscolhaNivelActivity" />
-        <activity android:name=".activity.CadastroActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.EscolhaNivelActivity" />
+        <activity android:name=".activity.CadastroActivity" />
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/perfilTheme" />

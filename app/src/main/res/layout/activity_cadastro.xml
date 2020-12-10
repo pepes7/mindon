@@ -100,7 +100,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:text="Cadastrar"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/edit_text_size"
             android:background="@drawable/button_default"
             />
