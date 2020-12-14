@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LigarActivity"
+    android:background="@color/colorBackground"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Match the columns"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            android:textColor="@android:color/white"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:padding="15dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp"
+                >
+                <TextView
+                    android:id="@+id/txt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="1) That was my third slice of cake"
+                    android:textColor="@android:color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/txt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:text="2) Did the boy pay for the apple?"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    />
+                <TextView
+                    android:id="@+id/txt_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:text="3) My mother is making me a scarf"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    />
+                <TextView
+                    android:id="@+id/txt_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:text="4) I have many cats"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    />
+                <TextView
+                    android:id="@+id/txt_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:text="5) He has never been to the Brazil"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@android:color/white"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                >
+                <TextView
+                    android:id="@+id/txt_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:text="a) O garoto pagou pela maça?"/>
+                <TextView
+                    android:id="@+id/txt_b"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="3dp"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="30dp"
+                    android:textSize="16dp"
+                    android:text="b) Essa foi minha terceira fatia de bolo"/>
+                <TextView
+                    android:id="@+id/txt_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="16dp"
+                    android:text="c) Eu tenho muitos gatos"/>
+                <TextView
+                    android:id="@+id/txt_d"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:layout_marginTop="30dp"
+                    android:text="d) Ele nunca esteve no Brasil"/>
+                <TextView
+                    android:id="@+id/txt_e"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="16dp"
+                    android:layout_marginTop="30dp"
+                    android:text="e) Minha mãe está fazendo um cachecol para mim"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -84,26 +84,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:textColor="@color/almostWhite"
             android:background="@drawable/button_default"
             android:text="Login"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAlignment="center"
-            android:layout_marginTop="40dp"
-            android:text="____________________      OU     ____________________"
-            android:textColor="@android:color/white"
-            android:textSize="18dp"
-            />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/button_shape"
-            android:drawableStart="@drawable/ic_google_icon"
-            android:text="Entrar com o google" />
 
 
     </LinearLayout>

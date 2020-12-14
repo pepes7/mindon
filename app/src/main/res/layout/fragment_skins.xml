@@ -28,6 +28,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/btn_bsg"
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:src="@drawable/skin_bsg"
@@ -56,6 +57,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/btn_ifam"
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:src="@drawable/skin_farda_ifam"
@@ -84,6 +86,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/btn_sc"
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:src="@drawable/skin_sc"
@@ -113,6 +116,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/btn_farda"
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:src="@drawable/skin_farda_formandos"
@@ -141,6 +145,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/btn_blackout"
                     android:layout_width="80dp"
                     android:layout_height="60dp"
                     android:src="@drawable/skin_blackout"
@@ -154,6 +159,7 @@
         </androidx.cardview.widget.CardView>
 
         <ImageView
+            android:id="@+id/macaco"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="40dp"

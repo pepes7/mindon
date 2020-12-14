@@ -15,7 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MemoryAvancadoActivity"></activity>
+        <activity android:name=".activity.ManualActivity"></activity>
+        <activity android:name=".activity.CreditosActivity" />
+        <activity android:name=".activity.LigarAvancadoActivity" />
+        <activity android:name=".activity.LigarInterActivity" />
+        <activity android:name=".activity.GameOverHangman" />
+        <activity android:name=".activity.HangmanGame" />
+        <activity android:name=".activity.ChooseLevel" />
+        <activity android:name=".activity.LigarActivity" />
+        <activity android:name=".activity.MemoryAvancadoActivity" />
         <activity android:name=".activity.MemoryInterActivity" />
         <activity
             android:name=".activity.JogoActivity"

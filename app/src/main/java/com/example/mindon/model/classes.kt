@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -23,7 +24,8 @@ open class Usuario(
     open var email : String = "",
     open var foto : String = "",
     open var nivel : String = "",
-    open var banana : String = ""
+    open var banana : String = "",
+    open var skin : String = ""
 )
 
 open class Pergunta(
@@ -39,7 +41,29 @@ var idUser = ""
 
 var nivelUser = ""
 
-var bananaGlobbal = ""
+var music = true
+lateinit var  media :MediaPlayer
+var contMusica = 0
+
+fun reproduzirMusica(context: Context){
+    if(music){
+        media = MediaPlayer.create(context,R.raw.music)
+        if (media!=null){
+            if (contMusica ==0){
+                media.start()
+                media.isLooping = true
+                contMusica = 1
+            }
+        }
+    }else{
+        media.stop()
+        contMusica = 0
+
+    }
+
+}
+
+
 
 fun trocaTela(fragmentTransaction : FragmentTransaction, atual: Int){
     var fragment : Fragment

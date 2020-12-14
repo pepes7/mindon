@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.mindon.R
-import com.example.mindon.activity.JogoActivity
-import com.example.mindon.activity.MemoryActivity
-import com.example.mindon.activity.MemoryAvancadoActivity
-import com.example.mindon.activity.MemoryInterActivity
+import com.example.mindon.activity.*
 import com.example.mindon.model.nivelUser
 import kotlinx.android.synthetic.main.fragment_main.view.*
 
@@ -32,9 +29,32 @@ class MainFragment : Fragment() {
             }
         }
 
+        view.buttonLabrinth.setOnClickListener {
+            val setLevel = intArrayOf(0, 1, 2)
+            if(nivelUser.equals("basico")){
+                val intent = Intent(context, HangmanGame::class.java)
+                intent.putExtra("content", setLevel[0])
+                startActivity(intent)
+            }else if(nivelUser.equals("inter")){
+                val intent = Intent(context, HangmanGame::class.java)
+                intent.putExtra("content", setLevel[1])
+                startActivity(intent)
+            }else if(nivelUser.equals("avancado")){
+                val intent = Intent(context, HangmanGame::class.java)
+                intent.putExtra("content", setLevel[2])
+                startActivity(intent)
+            }
+        }
+
 
         view.buttonJogo.setOnClickListener {
-            startActivity(Intent(context,JogoActivity::class.java))
+            if(nivelUser.equals("basico")){
+                startActivity(Intent(context,LigarActivity::class.java))
+            }else if(nivelUser.equals("inter")){
+                startActivity(Intent(context, LigarInterActivity::class.java))
+            }else if(nivelUser.equals("avancado")){
+                startActivity(Intent(context, LigarAvancadoActivity::class.java))
+            }
         }
 
         return view

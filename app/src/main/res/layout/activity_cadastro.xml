@@ -21,23 +21,7 @@
             android:textAlignment="center"
             />
 
-        <Button
-            android:id="@+id/btn_cadastro_google"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:background="@drawable/button_shape"
-            android:drawableStart="@drawable/ic_google_icon"
-            android:text="Entrar com o google" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAlignment="center"
-            android:text="____________________      OU     ____________________"
-            android:textColor="@android:color/white"
-            android:textSize="18dp"
-            />
 
         <EditText
             android:id="@+id/edit_nome_cadastro"
@@ -100,7 +84,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:text="Cadastrar"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/edit_text_size"
             android:background="@drawable/button_default"
             />
@@ -113,7 +97,6 @@
             android:text="Já tenho uma conta"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-
             android:textSize="12dp" />
 
 

@@ -174,6 +174,10 @@ class Pergunta11Fragment : Fragment() {
                 }else{
                     view.btn_verificar11.text = "Próxima"
                     view.btn_pular11.visibility = View.GONE
+                    val lp = view.btn_verificar11.layoutParams
+                    if (lp is ViewGroup.MarginLayoutParams){
+                        lp.leftMargin = 0
+                    }
                     opcoes(view)
                 }
             }

@@ -3,6 +3,7 @@ package com.example.mindon.activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -19,9 +20,7 @@ import com.example.homemindon.view.ScoresFragment
 import com.example.homemindon.view.SkinsFragment
 import com.example.homemindon.view.ViewPagerAdapter
 import com.example.mindon.R
-import com.example.mindon.model.Usuario
-import com.example.mindon.model.idUser
-import com.example.mindon.model.nivelUser
+import com.example.mindon.model.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -44,12 +43,16 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var  imagemPerfil: CircleImageView
     private lateinit var  storageReference: StorageReference
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
+       reproduzirMusica(baseContext)
 
         auth = FirebaseAuth.getInstance()
 
@@ -67,7 +70,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-       navView.setNavigationItemSelectedListener(this)
+        navView.setNavigationItemSelectedListener(this)
 
         storageReference =  FirebaseStorage.getInstance().reference
 
@@ -78,30 +81,30 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setUpTabs(){
         val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(SkinsFragment(), "")
         adapter.addFragment(MainFragment(), "")
+        adapter.addFragment(SkinsFragment(), "")
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
-        tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_local_mall_24)
-        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_sports_esports_24)
+        tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_sports_esports_24)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_local_mall_24)
 
-        tabs.getTabAt(1)!!.select()
+        tabs.getTabAt(0)!!.select()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.home, menu)
+       // menuInflater.inflate(R.menu.home, menu)
         return true
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-      when(item.itemId){
-            R.id.action_settings -> {
-                val intent = Intent(this, ProgressMemoryActivity::class.java)
-                startActivity(intent)
-            }
-        }
+//        when(item.itemId){
+//            R.id.action_settings -> {
+//                val intent = Intent(this, ProgressMemoryActivity::class.java)
+//                startActivity(intent)
+//            }
+//        }
 
         return super.onOptionsItemSelected(item)
     }
@@ -144,63 +147,30 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     fun carregarInformacoesNav(){
-        val signInAccount = GoogleSignIn.getLastSignedInAccount(this)
-        if(signInAccount != null){
-            //acessar a referencia do nó usuarios e seu filho(usuario logados)
-            val usuario = referencia.child("usuarios").child(idUser)
+        //acessar a referencia do nó usuarios e seu filho(usuario logados)
+        val usuario = referencia.child("usuarios").child(auth.uid!!)
 
-            //cria um listener para o nó
-            usuario.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    //recupera as informações do firebase e coloca dentro do objeto Usuario
-                    val user = dataSnapshot.getValue(Usuario::class.java)!!
-                    //referencia da view do nav header
-                    nome = findViewById(R.id.nav_user_nome)
-                    //exibe as informações
-                    nome.text = user.nome
+        //cria um listener para o nó
+        usuario.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                //recupera as informações do firebase e coloca dentro do objeto Usuario
+                val user = dataSnapshot.getValue(Usuario::class.java)!!
+                //referencia da view do nav header
+                nome = findViewById(R.id.nav_user_nome)
+                //exibe as informações
+                nome.text = user.nome
 
-                    nivelUser = user.nivel
-
-                    if(!user.foto.isEmpty()){
-                        imagemPerfil = findViewById(R.id.img_perfil_home);
-                        Picasso.get()
-                            .load(user.foto)
-                            .into(imagemPerfil)
-                    }
+                nivelUser = user.nivel
+                if(!user.foto.isEmpty()){
+                    imagemPerfil = findViewById(R.id.img_perfil_home);
+                    Picasso.get()
+                        .load(user.foto)
+                        .into(imagemPerfil)
                 }
+            }
 
-                override fun onCancelled(databaseError: DatabaseError) {}
-            })
-
-        }else{
-            //acessar a referencia do nó usuarios e seu filho(usuario logados)
-            val usuario = referencia.child("usuarios").child(auth.uid!!)
-
-            //cria um listener para o nó
-            usuario.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    //recupera as informações do firebase e coloca dentro do objeto Usuario
-                    val user = dataSnapshot.getValue(Usuario::class.java)!!
-                    //referencia da view do nav header
-                    nome = findViewById(R.id.nav_user_nome)
-                    //exibe as informações
-                    nome.text = user.nome
-
-                    nivelUser = user.nivel
-                    if(!user.foto.isEmpty()){
-                        imagemPerfil = findViewById(R.id.img_perfil_home);
-                        Picasso.get()
-                            .load(user.foto)
-                            .into(imagemPerfil)
-                    }
-                }
-
-                override fun onCancelled(databaseError: DatabaseError) {}
-            })
-
-        }
-
-
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
 
     }
 }

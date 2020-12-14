@@ -2,6 +2,7 @@ package com.example.mindon.activity
 
 import android.app.AlertDialog
 import android.graphics.drawable.Drawable
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -31,12 +32,16 @@ class MemoryActivity : AppCompatActivity() {
     private var rosa = false
     private var banana = 0
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_memory)
 
         val toolbar: Toolbar = findViewById(R.id.toolbar_memory)
         setSupportActionBar(toolbar)
+
+
 
         supportActionBar!!.title = "Memory"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

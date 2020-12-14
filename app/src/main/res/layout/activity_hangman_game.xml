@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.HangmanGame"
+    android:background="@color/nightBlue">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timerView"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/luckiest_guy"
+            android:gravity="center"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:drawableTop="@drawable/ic_timer"
+            android:text=""
+            android:textColor="@color/lyricsHangman"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/bananaScore"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/banana_1" />
+
+        <TextView
+            android:id="@+id/scoreView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/luckiest_guy"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="100dp"
+            android:text="0"
+            android:textColor="@color/scoreHangman"
+            android:textSize="40dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/luckiest_guy"
+            android:gravity="center"
+            android:text="HANGMAN GAME!"
+            android:textColor="@color/lyricsHangman"
+            android:textSize="45dp"
+            android:textStyle="italic" />
+    </TableRow>
+
+    <TableRow
+        android:background="@color/bgHangman2"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/wordToBeGuessed"
+            android:textColor="@color/lyricsHangman"
+            android:fontFamily="@font/luckiest_guy"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Word" />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/inputEditText"
+            android:maxLength="1"
+            android:textColor="@color/secondaryHangman"
+            android:fontFamily="@font/luckiest_guy"
+            android:textColorHint="@color/secondaryHangman"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textStyle="italic"
+            android:hint="Digite uma letra"/>
+    </TableRow>
+
+    <TableRow
+        android:background="@color/bgHangman2"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/lettersUsed"
+            android:textColor="@color/lyricsHangman"
+            android:fontFamily="@font/luckiest_guy"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Letras usadas: " />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/tableRowTriesLeft">
+
+        <TextView
+            android:id="@+id/tries"
+            android:textColor="@color/lyricsHangman"
+            android:fontFamily="@font/luckiest_guy"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text=" X  X  X  X  X  X " />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/tableRowReset">
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="@color/secondaryHangman"
+            android:fontFamily="@font/luckiest_guy"
+            android:onClick="resetGame"
+            android:text="Skip"
+            android:textColor="@color/bgHangman1"
+            android:textSize="30dp" />
+    </TableRow>
+
+</TableLayout>

@@ -153,7 +153,7 @@
             android:layout_marginLeft="20dp"
             android:text="Atualizar dados"
             android:fontFamily="@font/luckiest_guy"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:background="@drawable/button_default"
             android:textSize="@dimen/edit_text_size"
             />

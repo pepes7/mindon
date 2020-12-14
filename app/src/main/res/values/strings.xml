@@ -66,4 +66,15 @@
     <string name="pontoTotal">Você fez 0 pontos no total.</string>
     <string name="maxPontosEstagio">Sua maior pontuação em um estágio foi 0.</string>
     <string name="pontoMemory">Memory</string>
+
+
+    <string name="buttonPlay">Play!</string>
+    <string name="buttonInstructions">Instructions</string>
+    <string name="choose_your_level">Choose your level</string>
+    <string name="beginner_content">TextView</string>
+    <string name="advanced_content">TextView</string>
+    <string name="intermediary_content">TextView</string>
+    <string name="beginner_button">Beginner</string>
+    <string name="intermediary_button">Intermediary</string>
+    <string name="advanced_button">Advanced</string>
 </resources>

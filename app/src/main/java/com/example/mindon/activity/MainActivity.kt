@@ -17,7 +17,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.mindon.R
 import com.example.mindon.helper.Permissao
 import com.example.mindon.model.Usuario
-import com.example.mindon.model.bananaGlobbal
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
@@ -49,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    private var banana = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -185,7 +185,8 @@ class MainActivity : AppCompatActivity() {
                     nome.text = u.nome
                     email.text = u.email
 
-                    bananaGlobbal = u.banana
+                    banana = u.banana
+
                     if(u.nivel.equals("basico")){
                         rbBasico.isChecked = true
                         rbInter.isChecked = false
@@ -299,6 +300,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         database.child("usuarios").child(user.uid!!).setValue(usuario)
+        database.child("usuarios").child(user.uid!!).child("banana").setValue(banana)
         if (imagem!=null){
             salvarFoto(database.child("usuarios").child(user.uid))
         }else{

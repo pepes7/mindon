@@ -19,6 +19,11 @@
 
     <color name="orangeForButton">#f78a00</color>
 
+    <color name="bgHangman1">#0BA193</color>
+    <color name="bgHangman2">#048C7F</color>
+    <color name="lyricsHangman">#F7F7F7</color>
+    <color name="secondaryHangman">#D7CCC8</color>
+    <color name="scoreHangman">#FFC107</color>
 
 
 </resources>
